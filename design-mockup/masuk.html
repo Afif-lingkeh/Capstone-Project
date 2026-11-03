@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEDULI — Masuk</title>
+<script>
+  // Tambahkan ?impor di URL saat mengimpor ke pen.dev: animasi dimatikan agar posisi elemen diam.
+  if (location.search.includes('impor')) document.documentElement.classList.add('no-motion');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:#1565C0}a:hover{color:#0B3D7A}
+.serif{font-family:'Fraunces',Georgia,serif}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.rise{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.spin{animation:spin 80s linear infinite}
+.floaty{animation:floaty 6s ease-in-out infinite}
+.field{transition:border-color .2s,box-shadow .2s}
+.field:focus-within{border-color:#1565C0;box-shadow:0 0 0 4px #CFE0F5}
+.btn{transition:transform .25s cubic-bezier(.34,1.56,.64,1),background-color .2s}
+.btn:hover{transform:translateY(-2px);background-color:#0F56A8}
+.btn:active{transform:scale(.97)}
+.btn .arrow{display:inline-block;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.btn:hover .arrow{transform:translateX(5px)}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+<style>.no-motion *,.no-motion *::before,.no-motion *::after{animation:none !important;transition:none !important}</style>
+</head>
+<body>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #0F2340; background: #FAF7F0; min-height: 900px; display: flex; flex-wrap: wrap">
+    <section style="position: relative; flex: 1 1 520px; min-height: 360px; background: #0B3D7A; color: #FFFFFF; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 48px">
+    <svg class="spin" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; right: -220px; bottom: -220px; width: 700px; height: 700px; opacity: 0.2">
+      <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="0.5"></rect>
+      <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="0.5" transform="rotate(45 50 50)"></rect>
+      <rect x="32" y="32" width="36" height="36" fill="none" stroke="#5EEAD4" stroke-width="0.5"></rect>
+      <rect x="32" y="32" width="36" height="36" fill="none" stroke="#5EEAD4" stroke-width="0.5" transform="rotate(45 50 50)"></rect>
+    </svg>
+    <a href="beranda.html" style="position: relative; display: flex; align-items: center; gap: 12px; color: #FFFFFF; text-decoration: none">
+      <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="18" y="18" width="64" height="64" rx="10" fill="#FFFFFF"></rect>
+        <rect x="18" y="18" width="64" height="64" rx="10" fill="#13A89E" transform="rotate(45 50 50)" opacity="0.9"></rect>
+        <circle cx="50" cy="50" r="13" fill="#0B3D7A"></circle>
+      </svg>
+      <span class="serif" style="font-size: 24px; font-weight: 600">PEDULI</span>
+    </a>
+    <div class="rise" style="position: relative; max-width: 480px">
+      <h1 class="serif" style="margin: 0 0 18px; font-size: 56px; line-height: 1.06; font-weight: 500">Satu akun untuk <span style="font-style: italic; color: #5EEAD4">setiap langkahmu.</span></h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #C9D8EE">Tes potensi, bimbingan kuliah, konseling, dan konsultasi alumni. Semuanya tersimpan aman di akunmu.</p>
+    </div>
+    <div class="floaty" style="position: relative; align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2)">
+      <span style="width: 36px; height: 36px; border-radius: 50%; background: #13A89E; display: flex; align-items: center; justify-content: center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+      </span>
+      <span style="font-size: 14px">Dilindungi sesuai prinsip UU PDP</span>
+    </div>
+  </section>
+
+    <section style="flex: 1 1 480px; display: flex; align-items: center; justify-content: center; padding: 48px 24px">
+    <form class="rise" style="width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 22px; animation-delay: .15s">
+      <div>
+        <p style="margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #0B7F78">Assalamu’alaikum</p>
+        <h2 class="serif" style="margin: 0 0 8px; font-size: 40px; line-height: 1.1; font-weight: 500">Masuk ke PEDULI</h2>
+        <p style="margin: 0; font-size: 15px; color: #4A5A70">Santri masuk dengan NIS. Pengguna lain dengan username atau email.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="login" style="font-size: 14px; font-weight: 600">NIS / Username / Email</label>
+        <span class="field" style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #E2DACA">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5A70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
+          <input id="login" type="text" value="20250001" autocomplete="username" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: #0F2340">
+        </span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <label for="password" style="font-size: 14px; font-weight: 600">Password</label>
+          <a href="#" style="font-size: 13px; font-weight: 600">Lupa password?</a>
+        </div>
+        <span class="field" style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 8px 0 18px; border-radius: 16px; background: #FFFFFF; border: 1.5px solid #E2DACA">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5A70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+          <input id="password" type="password" value="password123" autocomplete="current-password" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: #0F2340">
+          <button type="button" aria-label="Tampilkan password" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A5A70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </button>
+        </span>
+      </div>
+
+      <label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #3F4F66; min-height: 44px">
+        <input type="checkbox" style="width: 20px; height: 20px; accent-color: #1565C0">
+        Ingat saya di perangkat ini
+      </label>
+
+      <button class="btn" type="submit" style="min-height: 56px; border: 0; border-radius: 16px; background: #1565C0; color: #FFFFFF; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 14px 28px -14px rgba(21,101,192,.7)">Masuk <span class="arrow" aria-hidden="true">→</span></button>
+
+      <p style="margin: 0; padding: 14px 16px; border-radius: 14px; background: #F2ECDF; font-size: 13px; line-height: 1.55; color: #3F4F66">Santri yang lupa password silakan menghubungi admin pesantren.</p>
+    </form>
+  </section>
+</div>
+</body>
+</html>

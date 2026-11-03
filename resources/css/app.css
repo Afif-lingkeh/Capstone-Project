@@ -1,0 +1,65 @@
+/* resources/css/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Satu cincin fokus untuk semua elemen interaktif (keyboard). */
+    :focus-visible {
+        outline: 2px solid theme('colors.blue.DEFAULT');
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    /* Tombol (desain: Button/Primary, Secondary, Ghost, Danger, Dark). Ditekan mengecil ke 0.96. */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-[15px] font-bold leading-tight transition-[background-color,border-color,color] duration-150 ease-out disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[background-color,border-color,color,transform] motion-safe:[&:not(:disabled)]:active:scale-[0.96];
+        -webkit-tap-highlight-color: transparent;
+    }
+    .btn-primary {
+        @apply btn bg-blue text-white shadow-cta hover:bg-cobalt;
+    }
+    .btn-secondary {
+        @apply btn border-[1.5px] border-blue bg-white text-blue hover:bg-blue-wash;
+    }
+    .btn-ghost {
+        @apply btn text-ink hover:bg-pebble;
+    }
+    .btn-dark {
+        @apply btn rounded-full bg-ink text-white hover:bg-ink-deep;
+    }
+    .btn-danger {
+        @apply btn bg-danger text-white hover:bg-danger-ink;
+    }
+
+    /* Field/Text: kotak input 48px, garis 1.5px. */
+    .field {
+        @apply block h-12 w-full rounded-[14px] border-[1.5px] border-hairline bg-white px-4 text-[15px] font-medium text-ink placeholder:text-slate focus:border-blue focus:ring-2 focus:ring-focus disabled:bg-pebble disabled:text-slate;
+    }
+
+    /* Isi artikel (Markdown) dengan gaya PEDULI. */
+    .prose-peduli {
+        @apply text-[17px] leading-[1.75] text-slate;
+    }
+    .prose-peduli :where(h2) { @apply mb-3 mt-8 text-2xl font-extrabold text-ink; }
+    .prose-peduli :where(h3) { @apply mb-2 mt-6 text-xl font-extrabold text-ink; }
+    .prose-peduli :where(p, ul, ol, blockquote) { @apply mb-4; }
+    .prose-peduli :where(ul) { @apply list-disc pl-6 marker:text-mist; }
+    .prose-peduli :where(ol) { @apply list-decimal pl-6 marker:font-bold marker:text-blue; }
+    .prose-peduli :where(li) { @apply mb-1.5; }
+    .prose-peduli :where(strong) { @apply font-bold text-ink; }
+    .prose-peduli :where(a) { @apply font-bold text-blue underline; }
+    .prose-peduli :where(code) { @apply rounded-md bg-pebble px-1.5 py-0.5 font-mono text-[0.9em] text-ink; }
+    .prose-peduli :where(blockquote) { @apply rounded-2xl border-l-4 border-gold bg-sand px-5 py-4 text-ink; }
+
+    /* Eyebrow: label kecil huruf kapital di atas judul. */
+    .eyebrow {
+        @apply text-[13px] font-bold uppercase tracking-[0.15em];
+    }
+}
+
+/* Sembunyikan elemen Alpine sebelum JavaScript siap (mencegah "kedipan"). */
+[x-cloak] {
+    display: none !important;
+}

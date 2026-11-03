@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEDULI — Beranda</title>
+<script>
+  // Tambahkan ?impor di URL saat mengimpor ke pen.dev: animasi dimatikan agar posisi elemen diam.
+  if (location.search.includes('impor')) document.documentElement.classList.add('no-motion');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:#1565C0}a:hover{color:#0B3D7A}
+.serif{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+@keyframes shimmer{0%{background-position:-150% 0}100%{background-position:250% 0}}
+@keyframes draw{from{stroke-dashoffset:220}to{stroke-dashoffset:0}}
+.motion-on .rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.motion-on .floaty{animation:floaty 6s ease-in-out infinite}
+.motion-on .spin{animation:spin 60s linear infinite}
+.motion-on .ticker{animation:ticker 38s linear infinite}
+.motion-on .bar{animation:grow 1.2s cubic-bezier(.2,.8,.2,1) both;transform-origin:left center}
+.motion-on .pop{animation:pop .7s cubic-bezier(.34,1.56,.64,1) both}
+.motion-on .wave{stroke-dasharray:220;animation:draw 1.4s .6s cubic-bezier(.65,0,.35,1) both}
+.shine{background:linear-gradient(110deg,#D5F3EF 35%,#F2FFFD 50%,#D5F3EF 65%);background-size:200% 100%}
+.motion-on .shine{animation:shimmer 3.5s ease-in-out infinite}
+.lift{transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s}
+.lift:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 22px 40px -18px rgba(11,61,122,.35)}
+.lift:hover .ico{animation:wiggle .6s ease-in-out}
+.btn{transition:transform .25s cubic-bezier(.34,1.56,.64,1),background-color .2s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.96)}
+.btn .arrow{display:inline-block;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.btn:hover .arrow{transform:translateX(5px)}
+.navlink{position:relative;color:#0F2340;text-decoration:none}
+.navlink:hover{color:#1565C0}
+.ticker-wrap:hover .ticker{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+<style>.no-motion *,.no-motion *::before,.no-motion *::after{animation:none !important;transition:none !important}</style>
+</head>
+<body>
+<div class="motion-on" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #0F2340; background: #FAF7F0; overflow: hidden">
+
+    <header style="position: relative; z-index: 5; max-width: 1240px; margin: 0 auto; padding: 24px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+    <a href="#" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0F2340">
+      <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="18" y="18" width="64" height="64" rx="10" fill="#1565C0"></rect>
+        <rect x="18" y="18" width="64" height="64" rx="10" fill="#13A89E" transform="rotate(45 50 50)" opacity="0.9"></rect>
+        <circle cx="50" cy="50" r="13" fill="#FAF7F0"></circle>
+      </svg>
+      <span style="display: flex; flex-direction: column; line-height: 1.05">
+        <span class="serif" style="font-size: 24px; font-weight: 600; letter-spacing: 0.02em">PEDULI</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #0B7F78">Smart Career Center</span>
+      </span>
+    </a>
+    <nav aria-label="Utama" style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px; font-weight: 500">
+      <a class="navlink" href="direktori.html">Tautan Resmi</a>
+      <a class="navlink" href="#fitur">Fitur</a>
+      <a class="navlink" href="#cara">Cara Kerja</a>
+      <a class="navlink" href="#privasi">Privasi</a>
+      <a class="btn" href="masuk.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; border-radius: 999px; background: #0B3D7A; color: #FFFFFF; text-decoration: none; font-weight: 600">Masuk <span class="arrow" aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+    <section style="position: relative; max-width: 1240px; margin: 0 auto; padding: 48px 24px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+    <svg class="spin" width="720" height="720" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; right: -260px; top: -120px; opacity: 0.5; pointer-events: none">
+      <rect x="20" y="20" width="60" height="60" fill="none" stroke="#B9D7F5" stroke-width="0.4"></rect>
+      <rect x="20" y="20" width="60" height="60" fill="none" stroke="#B9D7F5" stroke-width="0.4" transform="rotate(45 50 50)"></rect>
+      <rect x="30" y="30" width="40" height="40" fill="none" stroke="#BFE9E4" stroke-width="0.4"></rect>
+      <rect x="30" y="30" width="40" height="40" fill="none" stroke="#BFE9E4" stroke-width="0.4" transform="rotate(45 50 50)"></rect>
+      <circle cx="50" cy="50" r="12" fill="none" stroke="#E4D3A8" stroke-width="0.4"></circle>
+    </svg>
+
+    <div style="position: relative; flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+      <span class="rise" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6DECB; font-size: 13px; font-weight: 600; color: #0B3D7A; animation-delay: .05s">
+        <span class="pop" style="width: 8px; height: 8px; border-radius: 50%; background: #13A89E; animation-delay: .5s"></span>
+        Pesantren Modern Daarul ‘Uluum Lido
+      </span>
+      <h1 class="serif rise" style="margin: 0; font-size: 76px; line-height: 1.02; font-weight: 500; letter-spacing: -0.02em; animation-delay: .15s">
+        Langkah yang
+        <span style="position: relative; display: inline-block; font-style: italic; color: #0B7F78">pasti
+          <svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; bottom: -6px; width: 100%; height: 16px; overflow: visible">
+            <path class="wave" d="M2 12 C 30 2, 50 2, 70 10 S 110 18, 130 9 S 170 2, 198 10" fill="none" stroke="#13A89E" stroke-width="5" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        menuju kampus &amp; karier impian.
+      </h1>
+      <p class="rise" style="margin: 0; max-width: 540px; font-size: 19px; line-height: 1.65; color: #3F4F66; animation-delay: .28s">
+        Tautan kampus yang terverifikasi, program kerja dan magang luar negeri, tes minat bakat, konseling, dan jejaring alumni. Semuanya di satu tempat untuk santri.
+      </p>
+      <div class="rise" style="display: flex; flex-wrap: wrap; gap: 14px; animation-delay: .4s">
+        <a class="btn" href="masuk.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 16px; background: #1565C0; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 700; box-shadow: 0 14px 28px -14px rgba(21,101,192,.7)">Masuk ke PEDULI <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="direktori.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 24px; border-radius: 16px; background: #FFFFFF; color: #0B3D7A; border: 1.5px solid #CFE0F5; text-decoration: none; font-size: 16px; font-weight: 600">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          Cek tautan resmi kampus
+        </a>
+      </div>
+      <p class="rise" style="margin: 0; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #4A5A70; animation-delay: .5s">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7F78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        Catatan konseling terenkripsi dan hanya bisa dibuka konselor yang menangani.
+      </p>
+    </div>
+
+        <div style="position: relative; flex: 1 1 440px; min-width: 0; height: 520px">
+      <div class="rise" style="position: absolute; inset: 40px 30px 30px 40px; border-radius: 40px; background: #0B3D7A; animation-delay: .1s">
+        <svg viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.18">
+          <defs>
+            <pattern id="khatam" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="5" y="5" width="10" height="10" fill="none" stroke="#FFFFFF" stroke-width="0.6"></rect>
+              <rect x="5" y="5" width="10" height="10" fill="none" stroke="#FFFFFF" stroke-width="0.6" transform="rotate(45 10 10)"></rect>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#khatam)"></rect>
+        </svg>
+      </div>
+
+      <div class="floaty" style="position: absolute; left: 0; top: 70px; width: 330px">
+        <div class="rise" style="padding: 20px; border-radius: 24px; background: #FFFFFF; box-shadow: 0 30px 60px -28px rgba(15,35,64,.45); animation-delay: .35s">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+            <span style="font-size: 13px; font-weight: 600; color: #4A5A70">Situs Utama</span>
+            <span class="shine" style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; color: #0B6B65; font-size: 12px; font-weight: 700; border: 1px solid #A7E3DC">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              Terverifikasi
+            </span>
+          </div>
+          <p style="margin: 12px 0 2px; font-size: 15px; font-weight: 600">Universitas Indonesia</p>
+          <p style="margin: 0; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 22px; font-weight: 700; color: #1565C0">ui.ac.id</p>
+          <p style="margin: 10px 0 0; font-size: 12px; color: #4A5A70">Dicek otomatis setiap pekan</p>
+        </div>
+      </div>
+
+      <div class="floaty" style="position: absolute; right: 0; top: 230px; width: 300px; animation-delay: -2s">
+        <div class="rise" style="padding: 22px; border-radius: 24px; background: #FFFFFF; box-shadow: 0 30px 60px -28px rgba(15,35,64,.45); animation-delay: .5s">
+          <p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; color: #0F2340">Contoh profil minat</p>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px">
+            
+              <div style="display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; justify-content: space-between; color: #3F4F66"><span>Saintek</span><span style="font-weight: 700; color: #0F2340">Tinggi</span></div>
+                <div style="height: 8px; border-radius: 999px; background: #EEF3FA; overflow: hidden">
+                  <div class="bar" style="height: 100%; border-radius: 999px; width: 82%; background: #1565C0; animation-delay: .8s"></div>
+                </div>
+              </div>
+            
+              <div style="display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; justify-content: space-between; color: #3F4F66"><span>Bahasa</span><span style="font-weight: 700; color: #0F2340">Sedang</span></div>
+                <div style="height: 8px; border-radius: 999px; background: #EEF3FA; overflow: hidden">
+                  <div class="bar" style="height: 100%; border-radius: 999px; width: 61%; background: #13A89E; animation-delay: .95s"></div>
+                </div>
+              </div>
+            
+              <div style="display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; justify-content: space-between; color: #3F4F66"><span>Keagamaan</span><span style="font-weight: 700; color: #0F2340">Sedang</span></div>
+                <div style="height: 8px; border-radius: 999px; background: #EEF3FA; overflow: hidden">
+                  <div class="bar" style="height: 100%; border-radius: 999px; width: 55%; background: #0B3D7A; animation-delay: 1.1s"></div>
+                </div>
+              </div>
+            
+              <div style="display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; justify-content: space-between; color: #3F4F66"><span>Soshum</span><span style="font-weight: 700; color: #0F2340">Cukup</span></div>
+                <div style="height: 8px; border-radius: 999px; background: #EEF3FA; overflow: hidden">
+                  <div class="bar" style="height: 100%; border-radius: 999px; width: 38%; background: #B98A2E; animation-delay: 1.25s"></div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="pop" style="position: absolute; left: 60px; bottom: 0; display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 20px 40px -22px rgba(15,35,64,.5); animation-delay: .9s">
+        <span style="width: 40px; height: 40px; border-radius: 50%; background: #13A89E; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+        </span>
+        <span style="font-size: 14px; line-height: 1.3"><strong>Tanya alumni</strong><br><span style="color: #4A5A70">yang kuliah di Slovakia</span></span>
+      </div>
+    </div>
+  </section>
+
+    <section class="ticker-wrap" aria-label="Contoh domain resmi yang terverifikasi" style="background: #0B3D7A; color: #FFFFFF; padding: 22px 0; overflow: hidden">
+    <div class="ticker" style="display: flex; gap: 14px; width: max-content">
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ui.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          itb.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ugm.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          uinjkt.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          trisakti.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          pknstan.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          stis.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ipdn.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          azhar.edu.eg
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          uniba.sk
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          snpmb.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          sscasn.bkn.go.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ui.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          itb.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ugm.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          uinjkt.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          trisakti.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          pknstan.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          stis.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          ipdn.ac.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          azhar.edu.eg
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          uniba.sk
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          snpmb.id
+        </span>
+      
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); font-family: ui-monospace, Menlo, monospace; font-size: 15px; white-space: nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>
+          sscasn.bkn.go.id
+        </span>
+      
+    </div>
+  </section>
+
+    <section id="fitur" style="max-width: 1240px; margin: 0 auto; padding: 112px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+      <h2 class="serif" style="margin: 0; max-width: 620px; font-size: 52px; line-height: 1.08; font-weight: 500; letter-spacing: -0.015em">Enam pintu, <span style="font-style: italic; color: #1565C0">satu tujuan</span>: masa depan santri.</h2>
+      <p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.6; color: #3F4F66">Setiap fitur menjawab kebutuhan yang disampaikan langsung oleh pimpinan pesantren.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #E3EEFB; color: #1565C0">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3zM9 12l2 2 4-4"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Tautan kampus resmi</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Direktori PTN, PTS, kampus luar negeri, dan sekolah kedinasan yang diverifikasi dan dicek otomatis.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #D5F3EF; color: #0B6B65">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Kerja & magang luar negeri</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Program dari mitra pesantren di Jepang, Rusia, dan negara lain: syarat, biaya, dan tenggat yang jelas.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #F5EEDC; color: #8A6420">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-4 9 4-9 4-9-4zM7 10v5c0 1.7 2.2 3 5 3s5-1.3 5-3v-5"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Info & bimbingan kuliah</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Panduan SNBP, SNBT, jalur mandiri, beasiswa, lalu pesan jadwal dengan pembimbing akademik.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #E3EEFB; color: #0B3D7A">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Tes potensi & minat</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Profil skor Saintek, Soshum, Bahasa, dan Keagamaan, lengkap dengan saran jurusan dan kampus.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #D5F3EF; color: #0B6B65">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Konseling yang terjaga</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Ajukan sesi dengan konselor pesantren. Riwayat kasus aman dan bisa dilanjutkan konselor berikutnya.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+        <a class="lift" href="#" style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border-radius: 28px; background: #FFFFFF; border: 1px solid #ECE4D2; text-decoration: none; color: #0F2340">
+          <span class="ico" style="width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: #F5EEDC; color: #8A6420">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M17 3.5a4 4 0 0 1 0 7M22 21c0-3-1.8-5.6-4.5-6.6"></path></svg>
+          </span>
+          <span class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2">Jejaring alumni</span>
+          <span style="font-size: 15px; line-height: 1.6; color: #3F4F66">Cari alumni per negara, kampus, atau bidang, lalu ajukan konsultasi langsung lewat sistem.</span>
+          <span style="margin-top: auto; font-size: 14px; font-weight: 700; color: #1565C0">Selengkapnya →</span>
+        </a>
+      
+    </div>
+  </section>
+
+    <section id="cara" style="max-width: 1240px; margin: 0 auto; padding: 96px 24px">
+    <div style="border-radius: 40px; background: #F2ECDF; padding: 64px 48px; position: relative; overflow: hidden">
+      <p style="margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #0B7F78">Cara kerja</p>
+      <h2 class="serif" style="margin: 0 0 48px; font-size: 46px; line-height: 1.1; font-weight: 500">Dari bingung jadi yakin, dalam tiga langkah.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px">
+        
+          <div class="lift" style="position: relative; padding: 28px; border-radius: 24px; background: #FAF7F0">
+            <span class="serif" style="display: block; font-size: 64px; line-height: 1; font-style: italic; color: #1565C0">01</span>
+            <p style="margin: 18px 0 8px; font-size: 20px; font-weight: 700">Kenali dirimu</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3F4F66">Kerjakan tes potensi untuk melihat kecenderungan minat dan kemampuanmu.</p>
+          </div>
+        
+          <div class="lift" style="position: relative; padding: 28px; border-radius: 24px; background: #FAF7F0">
+            <span class="serif" style="display: block; font-size: 64px; line-height: 1; font-style: italic; color: #0B7F78">02</span>
+            <p style="margin: 18px 0 8px; font-size: 20px; font-weight: 700">Temukan jalurmu</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3F4F66">Jelajahi kampus, jalur masuk, beasiswa, atau program kerja dan magang yang cocok.</p>
+          </div>
+        
+          <div class="lift" style="position: relative; padding: 28px; border-radius: 24px; background: #FAF7F0">
+            <span class="serif" style="display: block; font-size: 64px; line-height: 1; font-style: italic; color: #B98A2E">03</span>
+            <p style="margin: 18px 0 8px; font-size: 20px; font-weight: 700">Bertanya pada yang sudah sampai</p>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3F4F66">Diskusikan dengan pembimbing dan alumni yang sudah menempuh jalan itu.</p>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    <section id="privasi" style="max-width: 1240px; margin: 0 auto; padding: 0 24px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+    <div style="flex: 1 1 460px; min-width: 0">
+      <p style="margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #0B7F78">Amanah data</p>
+      <h2 class="serif" style="margin: 0 0 20px; font-size: 46px; line-height: 1.1; font-weight: 500">Ruang aman untuk bercerita.</h2>
+      <p style="margin: 0 0 24px; font-size: 17px; line-height: 1.7; color: #3F4F66">Data santri dikelola mengikuti prinsip UU Pelindungan Data Pribadi. Catatan konseling disimpan terenkripsi, dan setiap akses tercatat.</p>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16px">
+        <li style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 26px; height: 26px; border-radius: 50%; background: #D5F3EF; color: #0B6B65; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg></span>Admin aplikasi tidak bisa membaca catatan konseling</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 26px; height: 26px; border-radius: 50%; background: #D5F3EF; color: #0B6B65; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg></span>Nomor HP alumni tidak ditampilkan; tanya lewat sistem</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start"><span style="flex: none; width: 26px; height: 26px; border-radius: 50%; background: #D5F3EF; color: #0B6B65; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg></span>Fitur sensitif aktif setelah ada persetujuan wali</li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center">
+      <div class="floaty" style="position: relative; width: 360px; height: 360px">
+        <div style="position: absolute; inset: 0; border-radius: 50%; background: #E3EEFB"></div>
+        <div style="position: absolute; inset: 50px; border-radius: 50%; background: #D5F3EF"></div>
+        <div style="position: absolute; inset: 100px; border-radius: 36px; background: #0B3D7A; display: flex; align-items: center; justify-content: center; box-shadow: 0 30px 60px -24px rgba(11,61,122,.6)">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15" r="1.4" fill="#5EEAD4" stroke="none"></circle></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 0 24px 96px">
+    <div style="border-radius: 40px; background: #1565C0; color: #FFFFFF; padding: 72px 48px; text-align: center; position: relative; overflow: hidden">
+      <svg class="spin" viewBox="0 0 100 100" aria-hidden="true" style="position: absolute; left: -80px; bottom: -120px; width: 360px; height: 360px; opacity: 0.18">
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="1"></rect>
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFFFFF" stroke-width="1" transform="rotate(45 50 50)"></rect>
+      </svg>
+      <p class="serif" style="margin: 0; font-size: 30px; font-style: italic; color: #BFE9E4">Man jadda wajada</p>
+      <h2 class="serif" style="position: relative; margin: 12px auto 28px; max-width: 760px; font-size: 52px; line-height: 1.1; font-weight: 500">Siapa bersungguh-sungguh, ia akan sampai.</h2>
+      <a class="btn" href="masuk.html" style="position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 30px; border-radius: 16px; background: #FFFFFF; color: #0B3D7A; text-decoration: none; font-size: 16px; font-weight: 700">Mulai sekarang <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <footer style="background: #0F2340; color: #C9D4E3">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px">
+      <span>© 2026 Pesantren Modern Daarul ‘Uluum Lido · PEDULI Smart Career Center</span>
+      <span style="display: flex; gap: 24px"><a href="#" style="color: #FFFFFF">Kebijakan Privasi</a><a href="direktori.html" style="color: #FFFFFF">Tautan Resmi</a></span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

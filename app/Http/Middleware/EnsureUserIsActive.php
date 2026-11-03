@@ -1,0 +1,30 @@
+<?php
+// app/Http/Middleware/EnsureUserIsActive.php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
+
+// Jika admin menonaktifkan akun saat penggunanya sedang login,
+// sesi diputus pada request berikutnya.
+class EnsureUserIsActive
+{
+    public function handle(Request $request, Closure $next): Response
+    {
+        $user = $request->user();
+
+        if ($user && ! $user->is_active) {
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect()->route('login')
+                ->withErrors(['login' => 'Akun Anda dinonaktifkan. Silakan hubungi admin pesantren.']);
+        }
+
+        return $next($request);
+    }
+}
