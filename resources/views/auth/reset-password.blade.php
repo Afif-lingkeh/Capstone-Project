@@ -28,7 +28,7 @@
                 <x-input-error id="password-error" :messages="$errors->get('password')" />
             </div>
             <div class="flex flex-col gap-2">
-                <x-input-label for="password_confirmation" value="Ulangi password baru" />
+                <x-input-label for="password_confirmation" value="Konfirmasi password baru" />
                 <x-icon-input id="password_confirmation" icon="lock" type="password" name="password_confirmation" required autocomplete="new-password" x-model="pw2"
                               :invalid="$errors->has('password_confirmation')" aria-describedby="password_confirmation-error" />
                 <x-input-error id="password_confirmation-error" :messages="$errors->get('password_confirmation')" />

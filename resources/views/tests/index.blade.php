@@ -60,7 +60,7 @@
                         @endif
                         <form method="POST" action="{{ route('tests.start', $test) }}">
                             @csrf
-                            <button type="submit" class="btn-primary py-3">{{ $inProgress ? 'Lanjutkan' : ($done ? 'Ulangi' : 'Mulai') }} <x-icon name="arrow-right" class="size-[18px]" /></button>
+                            <button type="submit" class="btn-primary py-3">{{ $inProgress ? 'Lanjutkan' : ($done ? 'Kerjakan ulang' : 'Mulai') }} <x-icon name="arrow-right" class="size-[18px]" /></button>
                         </form>
                     </div>
                 </article>

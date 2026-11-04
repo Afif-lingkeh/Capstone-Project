@@ -20,7 +20,7 @@
                     </nav>
                     <h1 class="text-[36px] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink lg:text-[56px]">Tautan resmi kampus &amp; sekolah kedinasan</h1>
                 @endguest
-                <p class="max-w-[640px] text-[17px] leading-[1.6] text-slate lg:text-lg">Semua tautan di sini sudah diperiksa pesantren. Sebelum mendaftar, pastikan alamat di browser-mu sama persis dengan yang tertulis di sini, ya.</p>
+                <p class="max-w-[640px] text-[17px] leading-[1.6] text-slate lg:text-lg">Semua tautan di sini sudah diperiksa pesantren. Sebelum mendaftar, pastikan alamat di browser-mu sama persis dengan yang tertulis di sini.</p>
             </div>
 
             <aside class="relative flex flex-col gap-3.5 overflow-hidden rounded-3xl bg-ink p-7 text-white lg:w-[400px]">

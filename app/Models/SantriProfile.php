@@ -20,6 +20,7 @@ class SantriProfile extends Model
         'class_name',
         'entry_year',
         'guardian_name',
+        'aspiration',
     ];
 
     protected function casts(): array

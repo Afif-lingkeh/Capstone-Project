@@ -25,7 +25,7 @@
                 <x-field label="Jumlah slot berurutan" for="count">
                     <x-text-input id="count" name="count" type="number" min="1" max="8" :value="old('count', 4)" required />
                 </x-field>
-                <x-field label="Ulangi mingguan" for="repeat_weeks" hint="0 = tidak diulang">
+                <x-field label="Ulang setiap minggu" for="repeat_weeks" hint="0 = tidak diulang">
                     <x-text-input id="repeat_weeks" name="repeat_weeks" type="number" min="0" max="8" :value="old('repeat_weeks', 0)" required />
                 </x-field>
                 <x-field label="Cara" for="mode" class="col-span-2">

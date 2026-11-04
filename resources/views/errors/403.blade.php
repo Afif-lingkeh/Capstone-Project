@@ -5,8 +5,8 @@
             <x-icon name="lock" class="size-10 text-blue" />
         </span>
         <p class="text-[13px] font-bold tracking-[0.15em] text-slate">KODE 403</p>
-        <h1 class="max-w-2xl text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] lg:text-[44px]">Afwan, halaman ini bukan untukmu</h1>
-        <p class="max-w-[520px] text-[17px] leading-7 text-slate">Halaman ini tidak tersedia untuk akunmu. Kalau menurutmu ini keliru, sampaikan ke admin pesantren, ya.</p>
+        <h1 class="max-w-2xl text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] lg:text-[44px]">Maaf, akses ke halaman ini dibatasi</h1>
+        <p class="max-w-[520px] text-[17px] leading-7 text-slate">Halaman ini tidak tersedia untuk akunmu. Jika menurutmu ini keliru, silakan hubungi admin pesantren.</p>
         <div class="flex flex-col gap-3 sm:flex-row">
             <a href="{{ auth()->check() ? route('dashboard') : route('home') }}" class="btn-primary">
                 {{ auth()->check() ? 'Kembali ke dashboard' : 'Kembali ke beranda' }} <x-icon name="arrow-right" class="size-[18px]" />

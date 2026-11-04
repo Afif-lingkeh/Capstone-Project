@@ -2,10 +2,10 @@
 {{-- Desain "03 Santri · Beranda". --}}
 @php
     $quick = [
-        ['Kerja & Magang', $counts['programs'] ? $counts['programs'].' program dibuka, cek syaratnya' : 'Program mitra luar negeri', 'Lihat program', 'programs.index', 'briefcase-business', 'bg-teal-wash text-teal-ink'],
+        ['Kerja & Magang', $counts['programs'] ? $counts['programs'].' program dibuka, lihat persyaratannya' : 'Program mitra luar negeri', 'Lihat program', 'programs.index', 'briefcase-business', 'bg-teal-wash text-teal-ink'],
         ['Info Kampus', $counts['latestArticle'] ? Str::limit($counts['latestArticle'], 40) : 'Panduan SNBP, SNBT, dan beasiswa', 'Baca panduan', 'articles.index', 'graduation-cap', 'bg-blue-wash text-blue'],
         ['Teman bercerita', 'Ada yang ingin diceritakan?', 'Mulai bercerita', 'counseling.index', 'heart-handshake', 'bg-violet-wash text-violet-ink'],
-        ['Tanya Kakak Alumni', $counts['alumni'] ? $counts['alumni'].' kakak alumni siap berbagi' : 'Jejaring alumni pesantren', 'Cari kakak alumni', 'alumni.index', 'users', 'bg-gold-wash text-gold-ink'],
+        ['Konsultasi Alumni', $counts['alumni'] ? $counts['alumni'].' alumni siap berbagi' : 'Jejaring alumni pesantren', 'Cari alumni', 'alumni.index', 'users', 'bg-gold-wash text-gold-ink'],
     ];
     $percent = $inProgress && $inProgress->test->questions_count ? (int) round($inProgress->answers_count / $inProgress->test->questions_count * 100) : null;
 @endphp
@@ -59,7 +59,7 @@
                         <x-progress-ring :percent="$percent" />
                         <div class="flex flex-1 flex-col gap-1.5">
                             <p class="text-[11px] font-bold uppercase tracking-[0.13em] text-teal-ink">Tes potensi · {{ $inProgress->test->title }}</p>
-                            <h2 class="text-xl font-extrabold">{{ $percent >= 50 ? 'Sedikit lagi selesai' : 'Ayo lanjutkan' }}</h2>
+                            <h2 class="text-xl font-extrabold">{{ $percent >= 50 ? 'Hampir selesai' : 'Tes belum selesai' }}</h2>
                             <p class="text-sm leading-[1.5] text-slate">{{ $inProgress->answers_count }} dari {{ $inProgress->test->questions_count }} soal terjawab. Lanjutkan kapan saja.</p>
                         </div>
                         <a href="{{ route('attempts.show', $inProgress) }}" class="btn-primary w-fit">Lanjutkan <x-icon name="arrow-right" class="size-[18px]" /></a>
@@ -117,7 +117,7 @@
                         <x-icon name="lock" class="text-gold-ink" />
                         <div class="flex flex-1 flex-col gap-0.5 text-sm">
                             <p class="font-bold">Konseling & Asisten AI belum dibuka</p>
-                            <p class="leading-[1.5] text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren, ya.</p>
+                            <p class="leading-[1.5] text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren.</p>
                         </div>
                     </div>
                 @endunless

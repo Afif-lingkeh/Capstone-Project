@@ -34,7 +34,7 @@
         <div class="flex flex-col gap-4 rounded-3xl bg-sand p-7 ring-1 ring-inset ring-gold/25">
             <span class="flex size-12 items-center justify-center rounded-2xl bg-white"><x-icon name="lock" class="size-6 text-gold-ink" /></span>
             <h2 class="text-xl font-extrabold">Konseling belum dibuka</h2>
-            <p class="max-w-2xl text-[15px] leading-6 text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren, ya. Sambil menunggu, kamu tetap boleh menemui ustadz/ustadzah atau musyrif/musyrifah kapan saja.</p>
+            <p class="max-w-2xl text-[15px] leading-6 text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren. Sambil menunggu, kamu tetap boleh menemui ustadz/ustadzah atau musyrif/musyrifah kapan saja.</p>
         </div>
     @else
         @if ($active)

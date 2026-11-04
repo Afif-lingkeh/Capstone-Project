@@ -57,7 +57,7 @@
                         <h2 class="text-lg font-extrabold">Verifikasi</h2>
                         <p class="mt-1 text-sm text-slate">
                             Pastikan domain cocok dengan sumber tepercaya, misalnya profil institusi di PDDikti, situs kementerian, atau surat/kontak resmi kampus.
-                            Tuliskan sumber yang Anda pakai agar bisa diperiksa ulang.
+                            Tuliskan sumber yang Anda gunakan agar dapat diperiksa ulang.
                         </p>
 
                         <form method="POST" action="{{ route('admin.links.verify', $link) }}" class="mt-4 space-y-3">

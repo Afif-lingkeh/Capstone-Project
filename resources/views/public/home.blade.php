@@ -18,7 +18,7 @@
 
     $commitments = [
         ['lock', 'Catatan konseling dirahasiakan', 'Hanya konselor yang mendampingimu yang dapat membacanya. Admin pun tidak bisa.'],
-        ['eye-off', 'Nomor HP tidak pernah ditampilkan', 'Kakak alumni sendiri yang memilih kontak mana yang boleh dilihat.'],
+        ['eye-off', 'Nomor HP tidak pernah ditampilkan', 'Alumni sendiri yang menentukan kontak mana yang dapat dilihat.'],
         ['scroll-text', 'Setiap akses tercatat', 'Siapa membuka apa dan kapan, semuanya tercatat. Isi ceritamu tidak ikut dicatat.'],
         ['user-check', 'Dengan izin orang tua', 'Konseling dan Asisten AI baru dibuka setelah orang tua atau wali memberi persetujuan.'],
     ];
@@ -81,7 +81,7 @@
                 <div class="absolute left-[290px] top-[84px] flex items-center gap-2.5 rounded-full bg-white py-2 pl-2 pr-4 shadow-float ring-1 ring-black/5">
                     <span class="flex size-10 items-center justify-center rounded-full bg-gold-wash text-sm font-bold text-gold-ink">RM</span>
                     <span class="flex flex-col gap-0.5">
-                        <span class="text-[13px] font-bold">Tanya kakak alumni di Slovakia</span>
+                        <span class="text-[13px] font-bold">Konsultasi dengan alumni di Slovakia</span>
                         <span class="text-xs font-medium text-slate">Biasanya dibalas dalam 2 hari</span>
                     </span>
                 </div>
@@ -130,7 +130,7 @@
                 <x-star class="absolute right-16 top-7 text-blue opacity-50" />
                 <span class="flex size-14 items-center justify-center rounded-2xl bg-white/10"><x-icon name="shield-check" class="size-[26px] text-teal-light" /></span>
                 <h3 class="text-[26px] font-extrabold leading-[1.17] tracking-[-0.02em] lg:text-[30px]">Tautan resmi kampus &amp; kedinasan</h3>
-                <p class="text-base leading-[1.625] text-hairline">Kami cek setiap pekan dan cocokkan dengan sumber resmi seperti PDDikti. Kalau ada yang janggal, tautannya kami sembunyikan dulu supaya kamu tidak tertipu.</p>
+                <p class="text-base leading-[1.625] text-hairline">Kami memeriksanya setiap pekan dan mencocokkannya dengan sumber resmi seperti PDDikti. Kalau ada yang janggal, tautannya kami sembunyikan dulu supaya kamu tidak tertipu.</p>
                 <div aria-hidden="true" class="flex flex-col gap-1.5 rounded-2xl bg-white/[.06] px-[18px] py-3.5 ring-1 ring-inset ring-white/[.08]">
                     <span class="text-[11px] font-bold tracking-[0.13em] text-mist">SITUS RESMI</span>
                     <span class="flex items-center gap-2.5">
@@ -220,7 +220,7 @@
             <div class="relative flex flex-1 flex-col gap-5">
                 <p lang="ar" dir="rtl" class="w-fit font-arabic text-[40px] font-bold text-gold-light">مَنْ جَدَّ وَجَدَ</p>
                 <h2 class="text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white lg:text-[44px]">Siapa bersungguh-sungguh, ia akan sampai.</h2>
-                <p class="text-[17px] leading-[1.6] text-blue-wash lg:text-lg">Luruskan niat, sempurnakan ikhtiar, lalu bertawakal. Langkah pertamanya sederhana: cek situs resmi kampus impianmu hari ini.</p>
+                <p class="text-[17px] leading-[1.6] text-blue-wash lg:text-lg">Luruskan niat, sempurnakan ikhtiar, lalu bertawakal. Langkah pertamanya sederhana: periksa situs resmi kampus impianmu hari ini.</p>
                 <div class="flex flex-col gap-3 sm:flex-row">
                     <a href="{{ route('links.index') }}" class="btn rounded-full bg-white py-[18px] pl-7 pr-[26px] text-ink hover:bg-blue-wash">Lihat tautan resmi <x-icon name="arrow-right" class="size-[18px]" /></a>
                     @guest

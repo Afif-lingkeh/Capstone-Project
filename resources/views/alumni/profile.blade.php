@@ -34,7 +34,7 @@
         </x-card>
 
         <x-card title="Kontak yang ditampilkan">
-            <p class="mb-5 text-sm text-slate">Kakak sendiri yang memilih kontak mana yang boleh dilihat santri.</p>
+            <p class="mb-5 text-sm text-slate">Anda sendiri yang menentukan kontak mana yang dapat dilihat santri.</p>
             <div class="grid gap-5 sm:grid-cols-2">
                 <div class="flex flex-col gap-3">
                     <x-field label="Profil LinkedIn" for="linkedin_url" optional><x-text-input id="linkedin_url" name="linkedin_url" type="url" :value="old('linkedin_url', $profile->linkedin_url)" placeholder="https://www.linkedin.com/in/…" /></x-field>

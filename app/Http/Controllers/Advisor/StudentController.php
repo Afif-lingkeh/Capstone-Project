@@ -37,6 +37,7 @@ class StudentController extends Controller
             'profile' => $profile,
             'headline' => $profile ? $this->scorer->headline($profile) : null,
             'attempts' => $student->testAttempts()->whereNotNull('submitted_at')->with('test')->latest('submitted_at')->get(),
+            'documents' => $student->documents()->with(['owner', 'uploader'])->latest()->get(),
             'bookings' => $student->guidanceBookings()->whereHas('slot', fn ($q) => $q->where('advisor_id', $request->user()->id))->with('slot')->latest()->get(),
         ]);
     }

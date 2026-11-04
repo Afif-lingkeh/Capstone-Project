@@ -12,7 +12,7 @@
         <div class="mx-auto flex max-w-2xl flex-col gap-4 rounded-3xl bg-sand p-7 ring-1 ring-inset ring-gold/25">
             <span class="flex size-12 items-center justify-center rounded-2xl bg-white"><x-icon name="lock" class="size-6 text-gold-ink" /></span>
             <h1 class="text-xl font-extrabold">Asisten AI belum dibuka</h1>
-            <p class="text-[15px] leading-6 text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren, ya.</p>
+            <p class="text-[15px] leading-6 text-slate">Fitur ini menunggu izin dari orang tua atau wali. Minta mereka menghubungi admin pesantren.</p>
         </div>
     @else
         <div class="flex flex-col gap-6 xl:flex-row xl:items-start">
@@ -77,7 +77,7 @@
                 </ol>
 
                 @if (! $configured)
-                    <div class="p-6"><x-alert variant="warning" title="Asisten AI belum diaktifkan">Pesantren belum memasang kunci layanan AI. Sementara itu, tanyakan langsung ke pembimbing akademik, ya.</x-alert></div>
+                    <div class="p-6"><x-alert variant="warning" title="Asisten AI belum diaktifkan">Pesantren belum memasang kunci layanan AI. Sementara itu, silakan bertanya langsung kepada pembimbing akademik.</x-alert></div>
                 @else
                     <form method="POST" action="{{ route('chat.send') }}" x-data="{ text: @js(old('message', '')), sending: false }" @submit="sending = true" class="flex flex-col gap-3 px-6 pb-4 pt-4">
                         @csrf

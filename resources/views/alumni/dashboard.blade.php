@@ -6,7 +6,7 @@
         <div aria-hidden="true" class="pointer-events-none absolute -top-28 right-20 size-[360px] rounded-full bg-teal-light/25 blur-[50px]"></div>
         <span class="relative flex size-16 shrink-0 items-center justify-center rounded-full bg-gold-wash text-xl font-bold text-gold-ink">{{ $profile->initials() }}</span>
         <div class="relative flex flex-1 flex-col gap-2">
-            <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-light">Ahlan wa sahlan, kakak alumni</p>
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-teal-light">Ahlan wa sahlan</p>
             <p class="text-[28px] font-extrabold tracking-[-0.02em]">{{ auth()->user()->name }}</p>
             <div class="flex flex-wrap items-center gap-2">
                 @if ($profile->isVerified())

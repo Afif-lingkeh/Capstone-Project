@@ -3,9 +3,9 @@
     <a href="{{ route('login') }}" class="flex w-fit items-center gap-1.5 py-1 text-sm font-bold text-blue hover:underline"><x-icon name="arrow-left" class="size-4" /> Kembali ke halaman masuk</a>
 
     <div class="flex flex-col gap-2.5">
-        <p class="text-xs font-bold tracking-[0.15em] text-teal-ink">AHLAN WA SAHLAN, KAKAK ALUMNI</p>
+        <p class="text-xs font-bold tracking-[0.15em] text-teal-ink">AHLAN WA SAHLAN</p>
         <h1 class="text-[28px] font-extrabold leading-[1.14] tracking-[-0.03em] lg:text-4xl">Daftar sebagai alumni</h1>
-        <p class="text-[15px] leading-6 text-slate">Profilmu tampil di direktori setelah diverifikasi admin pesantren. Nomor WhatsApp hanya untuk admin, tidak pernah ditampilkan ke santri.</p>
+        <p class="text-[15px] leading-6 text-slate">Profil Anda tampil di direktori setelah diverifikasi admin pesantren. Nomor WhatsApp hanya untuk admin, tidak pernah ditampilkan ke santri.</p>
     </div>
 
     <form method="POST" action="{{ route('alumni.register') }}" class="flex flex-col gap-[18px]">
@@ -31,8 +31,8 @@
         <x-field label="Username" for="username" hint="Huruf, angka, - atau _. Dipakai untuk masuk."><x-icon-input id="username" icon="at-sign" name="username" :value="old('username')" required autocomplete="username" :invalid="$errors->has('username')" /></x-field>
         <x-field label="Nomor WhatsApp" for="whatsapp" optional hint="Hanya untuk verifikasi oleh admin."><x-text-input id="whatsapp" name="whatsapp" type="tel" :value="old('whatsapp')" autocomplete="tel" /></x-field>
         <x-field label="Password" for="password" hint="Minimal 8 karakter, berisi huruf dan angka."><x-icon-input id="password" icon="lock" type="password" name="password" required autocomplete="new-password" :invalid="$errors->has('password')" /></x-field>
-        <x-field label="Ulangi password" for="password_confirmation" error="password_confirmation"><x-icon-input id="password_confirmation" icon="lock" type="password" name="password_confirmation" required autocomplete="new-password" /></x-field>
+        <x-field label="Konfirmasi password" for="password_confirmation" error="password_confirmation"><x-icon-input id="password_confirmation" icon="lock" type="password" name="password_confirmation" required autocomplete="new-password" /></x-field>
         <x-primary-button class="w-full py-4">Daftar <x-icon name="arrow-right" class="size-[18px]" /></x-primary-button>
-        <p class="text-center text-[13px] text-slate">Dengan mendaftar, kamu menyetujui <a href="{{ route('privacy') }}" class="font-bold text-blue underline">kebijakan privasi</a> PEDULI.</p>
+        <p class="text-center text-[13px] text-slate">Dengan mendaftar, Anda menyetujui <a href="{{ route('privacy') }}" class="font-bold text-blue underline">kebijakan privasi</a> PEDULI.</p>
     </form>
 </x-guest-layout>

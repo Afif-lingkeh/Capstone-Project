@@ -1,6 +1,7 @@
 <?php
 // routes/santri.php
 
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\Santri\ChatController;
 use App\Http\Controllers\Santri\CounselingController;
 use App\Http\Controllers\Santri\DashboardController;
@@ -42,3 +43,7 @@ Route::get('/asisten', [ChatController::class, 'index'])->name('chat.index');
 Route::get('/asisten/{conversation}', [ChatController::class, 'index'])->name('chat.show');
 Route::post('/asisten', [ChatController::class, 'send'])->middleware('throttle:10,1')->name('chat.send');
 Route::post('/asisten/pesan/{message}/nilai', [ChatController::class, 'rate'])->name('chat.rate');
+
+// Berkas santri (rapor, sertifikat, surat, dsb.)
+Route::get('/berkas', [DocumentController::class, 'index'])->name('documents.index');
+Route::post('/berkas', [DocumentController::class, 'store'])->middleware('throttle:20,1')->name('documents.store');

@@ -4,6 +4,7 @@
 
     <a href="{{ route('advisor.students.index') }}" class="mb-5 flex w-fit items-center gap-1.5 py-1 text-sm font-bold text-blue hover:underline"><x-icon name="arrow-left" class="size-4" /> Semua santri binaan</a>
 
+    <div class="mb-2"><x-avatar :user="$student" size="size-16" text="text-xl" /></div>
     <x-page-intro :title="$student->name" :description="$student->santriProfile ? $student->santriProfile->level->label().' · Kelas '.$student->santriProfile->class_name.' · NIS '.$student->santriProfile->nis : null" />
 
     <div class="flex flex-col gap-6 xl:flex-row xl:items-start">
@@ -25,6 +26,22 @@
                         </li>
                     @empty
                         <li class="px-6 py-6 text-sm text-slate">Belum ada tes yang dikumpulkan.</li>
+                    @endforelse
+                </ul>
+            </x-card>
+
+            @if ($student->santriProfile?->aspiration)
+                <x-card title="Cita-cita & kampus impian">
+                    <p class="whitespace-pre-line text-[15px] leading-[1.6]">{{ $student->santriProfile->aspiration }}</p>
+                </x-card>
+            @endif
+
+            <x-card :title="'Berkas ('.$documents->count().')'" :padded="false">
+                <ul class="divide-y divide-hairline">
+                    @forelse ($documents as $document)
+                        <x-document-row :document="$document" />
+                    @empty
+                        <li class="px-6 py-6 text-sm text-slate">Belum ada berkas yang diunggah.</li>
                     @endforelse
                 </ul>
             </x-card>

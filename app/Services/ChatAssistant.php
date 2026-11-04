@@ -66,13 +66,13 @@ class ChatAssistant
                 $outputTokens += $response->usage->outputTokens;
 
                 if ($response->stopReason === 'refusal') {
-                    return $this->result('Maaf, aku tidak bisa membantu untuk pertanyaan itu. Kamu bisa menanyakannya langsung ke pembimbing akademik atau konselor pesantren, ya.', $links, $isCrisis, $inputTokens, $outputTokens);
+                    return $this->result('Maaf, aku tidak bisa membantu untuk pertanyaan itu. Kamu bisa menanyakannya langsung kepada pembimbing akademik atau konselor pesantren.', $links, $isCrisis, $inputTokens, $outputTokens);
                 }
 
                 if ($response->stopReason !== 'tool_use') {
                     $text = collect($response->content)->filter(fn ($b) => $b->type === 'text')->map(fn ($b) => $b->text)->implode("\n\n");
 
-                    return $this->result(trim($text) ?: 'Maaf, aku belum bisa menjawab. Coba tanyakan dengan kalimat lain, ya.', $links, $isCrisis, $inputTokens, $outputTokens);
+                    return $this->result(trim($text) ?: 'Maaf, aku belum bisa menjawab. Silakan ajukan pertanyaan dengan kalimat lain.', $links, $isCrisis, $inputTokens, $outputTokens);
                 }
 
                 // Jalankan tool lalu kirim hasilnya kembali. Isi respons asisten dikembalikan utuh (termasuk blok thinking).
@@ -88,13 +88,13 @@ class ChatAssistant
                 $messages[] = ['role' => 'user', 'content' => $toolResults];
             }
         } catch (RateLimitException) {
-            throw new RuntimeException('Asisten AI sedang ramai dipakai. Coba lagi beberapa menit lagi, ya.');
+            throw new RuntimeException('Asisten AI sedang ramai dipakai. Silakan coba lagi dalam beberapa menit.');
         } catch (APIConnectionException|APIStatusException $e) {
             Log::warning('Asisten AI gagal', ['error' => $e->getMessage()]);
-            throw new RuntimeException('Asisten AI sedang tidak dapat dihubungi. Coba lagi nanti, ya.');
+            throw new RuntimeException('Asisten AI sedang tidak dapat dihubungi. Silakan coba lagi nanti.');
         }
 
-        return $this->result('Maaf, pertanyaannya cukup rumit. Coba pecah menjadi pertanyaan yang lebih sederhana, ya.', $links, $isCrisis, $inputTokens, $outputTokens);
+        return $this->result('Maaf, pertanyaannya cukup rumit. Silakan bagi menjadi beberapa pertanyaan yang lebih sederhana.', $links, $isCrisis, $inputTokens, $outputTokens);
     }
 
     /** Riwayat percakapan (hanya teks) sebagai konteks; pesan krisis tidak dikirim ulang ke model. */

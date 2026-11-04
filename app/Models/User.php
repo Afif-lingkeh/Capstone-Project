@@ -65,6 +65,23 @@ class User extends Authenticatable
             ->withTimestamps();
     }
 
+    /** Berkas milik santri (rapor, sertifikat, dsb.). */
+    public function documents(): HasMany
+    {
+        return $this->hasMany(Document::class, 'owner_id');
+    }
+
+    /** URL foto profil (lewat route yang memeriksa hak akses), atau null bila belum ada. */
+    public function avatarUrl(): ?string
+    {
+        return $this->avatar_path ? route('avatars.show', ['user' => $this->id, 'v' => substr(md5($this->avatar_path), 0, 8)]) : null;
+    }
+
+    public function initials(): string
+    {
+        return collect(preg_split('/\s+/', trim($this->name)))->take(2)->map(fn ($w) => mb_strtoupper(mb_substr($w, 0, 1)))->join('');
+    }
+
     public function chatConversations(): HasMany
     {
         return $this->hasMany(ChatConversation::class);

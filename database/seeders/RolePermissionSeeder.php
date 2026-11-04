@@ -26,6 +26,7 @@ class RolePermissionSeeder extends Seeder
             'consultations.moderate',
             'consents.manage',
             'counselor-shifts.manage',
+            'documents.manage',
         ];
 
         $rolePermissions = [

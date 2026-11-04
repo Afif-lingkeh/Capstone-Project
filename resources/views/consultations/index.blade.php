@@ -10,7 +10,7 @@
 
     <x-page-intro :title="$isAlumni ? 'Konsultasi dari santri' : 'Konsultasi dengan alumni'" description="Percakapan dapat ditinjau Admin Pesantren demi keamanan bersama.">
         @unless ($isAlumni)
-            <x-slot name="actions"><a href="{{ route('alumni.index') }}" class="btn-primary"><x-icon name="users" class="size-[18px]" />Cari kakak alumni</a></x-slot>
+            <x-slot name="actions"><a href="{{ route('alumni.index') }}" class="btn-primary"><x-icon name="users" class="size-[18px]" />Cari alumni</a></x-slot>
         @endunless
     </x-page-intro>
 

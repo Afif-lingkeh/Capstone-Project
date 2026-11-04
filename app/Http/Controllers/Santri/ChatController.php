@@ -52,7 +52,7 @@ class ChatController extends Controller
             return back()->with('warning', 'Asisten AI belum diaktifkan oleh pesantren.');
         }
         if ($this->remaining($request) <= 0) {
-            return back()->withInput()->with('warning', 'Batas pertanyaan hari ini sudah tercapai. Lanjutkan besok, ya. Untuk hal mendesak, temui pembimbing atau konselor.');
+            return back()->withInput()->with('warning', 'Batas pertanyaan hari ini sudah tercapai. Silakan lanjutkan besok. Untuk keperluan mendesak, hubungi pembimbing atau konselor.');
         }
 
         $conversation = isset($data['conversation_id'])

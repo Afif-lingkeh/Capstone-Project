@@ -62,6 +62,6 @@ class AlumniRegistrationController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect()->route('alumni.dashboard')->with('success', 'Jazakallahu khairan! Profilmu sedang diverifikasi admin pesantren. Sambil menunggu, lengkapi profilmu, ya.');
+        return redirect()->route('alumni.dashboard')->with('success', 'Jazakallahu khairan. Profil Anda sedang diverifikasi admin pesantren. Sambil menunggu, silakan lengkapi profil Anda.');
     }
 }

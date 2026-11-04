@@ -16,7 +16,7 @@
                     <p class="flex items-center gap-3 break-all text-sm font-bold"><x-icon name="mail" class="size-[18px] text-slate" />{{ $profile->public_email }}</p>
                 @endif
                 @unless (($profile->show_linkedin && $profile->linkedin_url) || ($profile->show_email && $profile->public_email))
-                    <p class="text-sm text-slate">Kakak ini memilih dihubungi lewat konsultasi di PEDULI.</p>
+                    <p class="text-sm text-slate">Alumni ini memilih dihubungi melalui fitur konsultasi PEDULI.</p>
                 @endunless
                 <p class="text-xs text-slate">Nomor WhatsApp alumni tidak pernah ditampilkan.</p>
             </div>
@@ -31,7 +31,7 @@
             </x-card>
 
             @if ($existing)
-                <x-alert title="Konsultasimu dengan kakak ini masih berjalan">
+                <x-alert title="Konsultasimu dengan alumni ini masih berjalan">
                     <a href="{{ route('consultations.show', $existing) }}" class="font-bold text-blue underline">Buka percakapan</a>
                 </x-alert>
             @elseif ($canConsult)

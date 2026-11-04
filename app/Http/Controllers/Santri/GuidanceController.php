@@ -76,7 +76,7 @@ class GuidanceController extends Controller
         });
 
         if (! $booking) {
-            return back()->with('warning', 'Maaf, slot itu baru saja dipesan atau sudah lewat. Pilih waktu lain, ya.');
+            return back()->with('warning', 'Maaf, slot itu baru saja dipesan atau sudah lewat. Silakan pilih waktu lain.');
         }
 
         $slot->advisor->notify(new InAppNotification(
