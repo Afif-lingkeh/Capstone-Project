@@ -21,6 +21,8 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
+            // Khusus santri: cita-cita & kampus impian, dibaca pembimbing akademik.
+            'aspiration' => ['nullable', 'string', 'max:500'],
         ];
     }
 }

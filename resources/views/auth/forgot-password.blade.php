@@ -5,7 +5,7 @@
     </a>
 
     <div class="flex flex-col gap-2.5">
-        <h1 class="text-[28px] font-extrabold leading-[1.14] tracking-[-0.03em] lg:text-4xl">Lupa password? Tidak apa-apa.</h1>
+        <h1 class="text-[28px] font-extrabold leading-[1.14] tracking-[-0.03em] lg:text-4xl">Atur ulang password</h1>
         <p class="text-[15px] leading-6 text-slate">Tulis email yang terdaftar. Kami kirimkan tautan untuk membuat password baru.</p>
     </div>
 

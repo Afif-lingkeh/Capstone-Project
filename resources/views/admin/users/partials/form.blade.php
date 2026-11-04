@@ -105,7 +105,7 @@
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             <div>
-                <x-input-label for="password_confirmation" value="Ulangi password" />
+                <x-input-label for="password_confirmation" value="Konfirmasi password" />
                 <x-text-input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" autocomplete="new-password" :required="! $user->exists" />
             </div>
         </div>

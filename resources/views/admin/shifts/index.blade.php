@@ -19,7 +19,7 @@
                 <x-field label="Jam mulai" for="start_time"><x-text-input id="start_time" name="start_time" type="time" :value="old('start_time', '07:00')" required /></x-field>
                 <x-field label="Jam selesai" for="end_time"><x-text-input id="end_time" name="end_time" type="time" :value="old('end_time', '21:00')" required /></x-field>
             </div>
-            <x-field label="Ulangi berapa hari berikutnya" for="repeat_days" hint="0 = hanya tanggal itu"><x-text-input id="repeat_days" name="repeat_days" type="number" min="0" max="30" :value="old('repeat_days', 0)" required /></x-field>
+            <x-field label="Ulang untuk berapa hari berikutnya" for="repeat_days" hint="0 = hanya tanggal itu"><x-text-input id="repeat_days" name="repeat_days" type="number" min="0" max="30" :value="old('repeat_days', 0)" required /></x-field>
             <x-primary-button>Simpan piket</x-primary-button>
         </form>
 

@@ -47,7 +47,7 @@ class ConsultationController extends Controller
 
         $open = Consultation::where('santri_id', $santri->id)->where('alumni_id', $alumniProfile->user_id)->whereIn('status', ['pending', 'accepted'])->first();
         if ($open) {
-            return redirect()->route('consultations.show', $open)->with('warning', 'Kamu masih punya konsultasi yang berjalan dengan kakak ini.');
+            return redirect()->route('consultations.show', $open)->with('warning', 'Kamu masih memiliki konsultasi yang berjalan dengan alumni ini.');
         }
 
         $consultation = DB::transaction(function () use ($santri, $alumniProfile, $data) {
@@ -64,7 +64,7 @@ class ConsultationController extends Controller
             icon: 'message-circle',
         ));
 
-        return redirect()->route('consultations.show', $consultation)->with('success', 'Pertanyaanmu terkirim. Kakak alumni akan menjawab setelah menerima permintaan.');
+        return redirect()->route('consultations.show', $consultation)->with('success', 'Pertanyaanmu terkirim. Alumni akan menjawab setelah menerima permintaanmu.');
     }
 
     public function show(Request $request, Consultation $consultation): View
@@ -103,8 +103,8 @@ class ConsultationController extends Controller
         $consultation->update(['status' => $data['decision']]);
 
         $consultation->santri->notify(new InAppNotification(
-            title: $data['decision'] === 'accepted' ? 'Kakak alumni menerima konsultasimu' : 'Konsultasi belum bisa diterima',
-            body: $data['decision'] === 'accepted' ? 'Silakan lanjutkan percakapan.' : 'Coba ajukan ke kakak alumni lain, ya.',
+            title: $data['decision'] === 'accepted' ? 'Alumni menerima permintaan konsultasimu' : 'Konsultasi belum bisa diterima',
+            body: $data['decision'] === 'accepted' ? 'Silakan lanjutkan percakapan.' : 'Silakan ajukan pertanyaan kepada alumni lain.',
             url: route('consultations.show', $consultation),
             icon: 'message-circle',
         ));

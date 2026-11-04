@@ -27,6 +27,15 @@
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
         </div>
 
+        @if ($user->santriProfile)
+            <div>
+                <x-input-label for="aspiration" value="Cita-cita & kampus impian (opsional)" />
+                <x-textarea id="aspiration" name="aspiration" rows="3" maxlength="500" class="mt-1 min-h-[96px]" placeholder="mis. Ingin kuliah Kedokteran di UGM atau melanjutkan ke Al-Azhar">{{ old('aspiration', $user->santriProfile->aspiration) }}</x-textarea>
+                <p class="mt-1 text-xs text-slate">Dibaca pembimbing akademikmu agar bimbingannya lebih tepat.</p>
+                <x-input-error class="mt-2" :messages="$errors->get('aspiration')" />
+            </div>
+        @endif
+
         <div class="flex items-center gap-4">
             <x-primary-button>Simpan</x-primary-button>
 

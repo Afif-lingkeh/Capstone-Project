@@ -32,7 +32,7 @@
         <h2 id="pesan-jadwal" class="border-b border-hairline px-6 py-5 text-lg font-extrabold">Pesan jadwal baru</h2>
 
         @if ($dates->isEmpty())
-            <div class="p-6"><x-empty-state icon="calendar" title="Belum ada waktu kosong" class="border-0">Pembimbing belum membuka slot untuk 4 minggu ke depan. Coba cek lagi besok, ya.</x-empty-state></div>
+            <div class="p-6"><x-empty-state icon="calendar" title="Belum ada waktu kosong" class="border-0">Pembimbing belum membuka slot untuk 4 minggu ke depan. Silakan periksa kembali besok.</x-empty-state></div>
         @elseif (! $canBook)
             <div class="p-6"><x-alert variant="warning" title="Jadwalmu sudah penuh">Kamu sudah punya {{ \App\Http\Controllers\Santri\GuidanceController::MAX_UPCOMING }} jadwal yang akan datang. Selesaikan atau batalkan salah satunya untuk memesan lagi.</x-alert></div>
         @else

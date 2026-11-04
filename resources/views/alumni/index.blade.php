@@ -2,8 +2,8 @@
 <x-app-layout>
     <x-slot name="header">Direktori Alumni</x-slot>
 
-    <x-page-intro eyebrow="Jejaring alumni" title="Tanya kakak alumni"
-                  description="Kakak-kakak yang sudah kuliah atau bekerja di dalam dan luar negeri. Semua sudah diverifikasi pesantren." />
+    <x-page-intro eyebrow="Jejaring alumni" title="Konsultasi dengan alumni"
+                  description="Alumni pesantren yang sedang kuliah atau bekerja di dalam dan luar negeri. Semua sudah diverifikasi pesantren." />
 
     <form method="GET" class="mb-6 grid gap-3 rounded-3xl bg-white p-4 ring-1 ring-inset ring-hairline sm:grid-cols-2 lg:grid-cols-4">
         <div class="sm:col-span-2">

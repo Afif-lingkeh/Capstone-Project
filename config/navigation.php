@@ -17,6 +17,7 @@ $adminMenu = [
     ['label' => 'Bank Soal', 'route' => 'admin.tests.index', 'match' => ['admin.tests.*', 'admin.questions.*'], 'icon' => 'clipboard-list', 'section' => 'Modul', 'description' => 'Soal tes potensi dan bobot jalur.'],
     ['label' => 'Verifikasi Alumni', 'route' => 'admin.alumni.index', 'match' => 'admin.alumni.*', 'icon' => 'user-check', 'section' => 'Modul', 'description' => 'Tinjau akun alumni sebelum tampil di direktori.'],
     ['label' => 'Moderasi Konsultasi', 'route' => 'admin.consultations.index', 'match' => 'admin.consultations.*', 'icon' => 'message-square', 'section' => 'Modul', 'description' => 'Pantau percakapan santri dengan alumni.'],
+    ['label' => 'Berkas Santri', 'route' => 'admin.documents.index', 'match' => 'admin.documents.*', 'icon' => 'folder-open', 'section' => 'Modul', 'description' => 'Periksa dan unggah berkas santri.'],
     ['label' => 'Persetujuan Wali', 'route' => 'admin.consents.index', 'match' => 'admin.consents.*', 'icon' => 'shield', 'section' => 'Modul', 'description' => 'Catat persetujuan orang tua/wali santri.'],
     ['label' => 'Piket Konselor', 'route' => 'admin.shifts.index', 'match' => 'admin.shifts.*', 'icon' => 'calendar-clock', 'section' => 'Modul', 'description' => 'Jadwal konselor yang menerima notifikasi krisis.'],
 ];
@@ -73,5 +74,6 @@ return [
         ['label' => 'Konseling', 'route' => 'counseling.index', 'match' => 'counseling.*', 'icon' => 'heart-handshake', 'description' => 'Ajukan sesi dengan konselor pesantren.'],
         ['label' => 'Direktori Alumni', 'route' => 'alumni.index', 'match' => ['alumni.index', 'alumni.show', 'consultations.*'], 'icon' => 'users', 'description' => 'Cari alumni dan ajukan konsultasi.'],
         ['label' => 'Asisten AI', 'route' => 'chat.index', 'match' => 'chat.*', 'icon' => 'sparkles', 'description' => 'Tanya seputar kampus, program, dan hasil tes.'],
+        ['label' => 'Berkas Saya', 'route' => 'documents.index', 'match' => 'documents.*', 'icon' => 'folder-open', 'description' => 'Simpan rapor, sertifikat, dan surat.'],
     ],
 ];

@@ -41,7 +41,7 @@
                             <form method="POST" action="{{ route('consultations.respond', $consultation) }}">@csrf<input type="hidden" name="decision" value="accepted"><x-primary-button>Terima</x-primary-button></form>
                         </div>
                     @else
-                        <p class="text-sm text-slate">Menunggu kakak alumni menerima permintaanmu.</p>
+                        <p class="text-sm text-slate">Menunggu alumni menerima permintaanmu.</p>
                     @endif
                 </div>
             @endif

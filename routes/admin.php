@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ConsentController;
 use App\Http\Controllers\Admin\SantriImportController;
 use App\Http\Controllers\Admin\ShiftController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\MajorController;
 use App\Http\Controllers\Admin\InstitutionController;
 use App\Http\Controllers\Admin\OfficialLinkController;
@@ -72,6 +73,11 @@ Route::get('piket-konselor', [ShiftController::class, 'index'])->name('shifts.in
 Route::post('piket-konselor', [ShiftController::class, 'store'])->name('shifts.store');
 Route::delete('piket-konselor/{shift}', [ShiftController::class, 'destroy'])->name('shifts.destroy');
 Route::get('log-audit', [AuditLogController::class, 'index'])->name('audit.index');
+
+// Berkas santri
+Route::get('berkas', [DocumentController::class, 'index'])->name('documents.index');
+Route::post('berkas', [DocumentController::class, 'store'])->name('documents.store');
+Route::patch('berkas/{document}/periksa', [DocumentController::class, 'review'])->name('documents.review');
 
 // Fase 9: evaluasi Asisten AI (Super Admin)
 Route::get('evaluasi-asisten', [ChatLogController::class, 'index'])->name('chat-logs.index');

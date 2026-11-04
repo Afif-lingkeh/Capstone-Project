@@ -9,7 +9,6 @@
     $bottomNav = $role === \App\Enums\Role::Santri ? collect($navigation)->whereNotNull('mobile')->values() : collect();
     $isActive = fn (array $item) => request()->routeIs(...$item['match']);
     $unread = $user->unreadNotifications()->count();
-    $initials = Str::of($user->name)->explode(' ')->take(2)->map(fn ($w) => Str::upper(Str::substr($w, 0, 1)))->join('');
     $profile = $user->santriProfile;
 @endphp
 <!DOCTYPE html>
@@ -101,7 +100,7 @@
             <x-dropdown align="right" width="48">
                 <x-slot name="trigger">
                     <button type="button" class="flex items-center gap-3 rounded-full p-1 ring-1 ring-inset ring-hairline hover:bg-pebble sm:py-2 sm:pl-2 sm:pr-4">
-                        <span class="flex size-9 items-center justify-center rounded-full bg-blue-wash text-sm font-bold text-cobalt sm:size-10">{{ $initials }}</span>
+                        <x-avatar :user="$user" size="size-9 sm:size-10" />
                         <span class="hidden text-left sm:block">
                             <span class="block max-w-[160px] truncate text-sm font-bold">{{ $user->name }}</span>
                             <span class="block text-xs font-medium text-slate">{{ $profile ? $profile->level->label().' · Kelas '.$profile->class_name : $role?->label() }}</span>

@@ -14,19 +14,25 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => $request->user()->load('santriProfile'),
         ]);
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
+        $user->fill($request->safe()->only(['name', 'email']));
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
 
-        $request->user()->save();
+        $user->save();
+
+        // NIS, jenjang, kelas, dan tahun masuk tetap diatur admin; santri hanya mengisi cita-citanya.
+        if ($user->santriProfile && $request->has('aspiration')) {
+            $user->santriProfile->update(['aspiration' => $request->validated('aspiration')]);
+        }
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
