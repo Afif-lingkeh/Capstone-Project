@@ -28,14 +28,14 @@
 
 <x-layouts.public>
     {{-- Hero --}}
-    <section class="relative overflow-hidden">
+    <section class="relative overflow-hidden lg:flex lg:min-h-[calc(100vh-80px)] lg:items-center">
         <div aria-hidden="true" class="pointer-events-none absolute inset-0">
             <div class="absolute left-[60%] top-10 size-[520px] rounded-full bg-[#0099ff]/[.18] blur-[55px]"></div>
             <div class="absolute left-[78%] -top-20 size-[360px] rounded-full bg-[#e55cff]/20 blur-[50px]"></div>
             <div class="absolute left-[70%] top-[420px] size-80 rounded-full bg-teal/[.18] blur-[45px]"></div>
         </div>
 
-        <div class="relative mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5 pb-16 pt-10 lg:flex-row lg:px-[120px] lg:pb-24 lg:pt-[72px]">
+        <div class="relative mx-auto flex w-full max-w-[1440px] flex-col items-center gap-10 px-5 pb-16 pt-10 lg:flex-row lg:px-[120px] lg:pb-24 lg:pt-[72px]">
             <div class="flex w-full flex-1 flex-col gap-6 lg:gap-7">
                 <p class="flex w-fit items-center gap-2 rounded-[19px] bg-blue-wash py-2 pl-2 pr-3.5 text-[13px] font-bold text-cobalt">
                     <x-application-logo class="size-8 lg:size-10" />
@@ -103,9 +103,9 @@
     </section>
 
     {{-- Pita domain resmi --}}
-    <section aria-labelledby="pita-domain" class="border-y border-hairline bg-cloud">
+    <section aria-label="Situs resmi yang sudah kami periksa" class="border-y border-hairline bg-cloud">
         <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-5 py-8 lg:px-[120px]">
-            <h2 id="pita-domain" class="text-center text-xs font-bold uppercase tracking-[0.13em] text-slate">Situs resmi yang sudah kami periksa</h2>
+            <p class="text-center text-xs font-bold uppercase tracking-[0.13em] text-slate">Situs resmi yang sudah kami periksa</p>
             <ul class="flex flex-wrap justify-center gap-2 sm:gap-3">
                 @foreach ($domains as $domain)
                     <li class="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 shadow-card ring-1 ring-black/5">
@@ -126,7 +126,7 @@
         </div>
 
         <div class="flex flex-col gap-6 lg:flex-row">
-            <article class="relative flex flex-col gap-6 overflow-hidden rounded-4xl bg-ink p-7 text-white lg:w-[520px] lg:p-10">
+            <article class="relative flex flex-col gap-6 overflow-hidden rounded-4xl bg-ink p-7 text-white lg:w-[520px] lg:p-10 transition-[transform,box-shadow] duration-150 ease-out hover:shadow-tile motion-safe:hover:-translate-y-0.5">
                 <x-star class="absolute right-16 top-7 text-blue opacity-50" />
                 <span class="flex size-14 items-center justify-center rounded-2xl bg-white/10"><x-icon name="shield-check" class="size-[26px] text-teal-light" /></span>
                 <h3 class="text-[26px] font-extrabold leading-[1.17] tracking-[-0.02em] lg:text-[30px]">Tautan resmi kampus &amp; kedinasan</h3>
@@ -138,12 +138,12 @@
                         <span class="flex-1 font-mono text-[22px] font-bold">pknstan.ac.id</span>
                     </span>
                 </div>
-                <a href="{{ route('links.index') }}" class="btn-primary w-fit py-3.5 pl-6 pr-[22px]">Buka direktori <x-icon name="arrow-right" class="size-[18px]" /></a>
+                <a href="{{ route('links.index') }}" class="btn-primary w-full py-3.5 pl-6 pr-[22px] sm:w-fit">Buka direktori <x-icon name="arrow-right" class="size-[18px]" /></a>
             </article>
 
             <ul class="grid flex-1 gap-6 sm:grid-cols-2">
                 @foreach ($features as [$title, $text, $cta, $icon, $tile])
-                    <li class="flex flex-col gap-3.5 rounded-3xl bg-white p-7 shadow-card ring-1 ring-black/5">
+                    <li class="flex flex-col gap-3.5 rounded-3xl bg-white p-7 shadow-card ring-1 ring-black/5 transition-[transform,box-shadow] duration-150 ease-out hover:shadow-float motion-safe:hover:-translate-y-0.5">
                         <span class="flex size-12 items-center justify-center rounded-[14px] {{ $tile }}"><x-icon :name="$icon" class="size-[22px]" /></span>
                         <h3 class="text-lg font-extrabold">{{ $title }}</h3>
                         <p class="flex-1 text-sm leading-normal text-slate">{{ $text }}</p>
@@ -196,7 +196,7 @@
                     <h2 id="amanah" class="text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] lg:text-[44px]">Ceritamu adalah amanah</h2>
                     <p class="text-[17px] leading-[1.6] text-slate">Sebagian besar santri yang memakai PEDULI masih di bawah 18 tahun. Karena itu, hanya orang yang memang bertugas membantumu yang bisa melihat datamu.</p>
                 </div>
-                <a href="{{ route('privacy') }}" class="btn-secondary w-fit py-3.5 pl-6 pr-[22px]">Baca kebijakan privasi <x-icon name="arrow-right" class="size-[18px]" /></a>
+                <a href="{{ route('privacy') }}" class="btn-secondary w-full py-3.5 pl-6 pr-[22px] sm:w-fit">Baca kebijakan privasi <x-icon name="arrow-right" class="size-[18px]" /></a>
             </div>
 
             <ul class="divide-y divide-hairline overflow-hidden rounded-[28px] bg-white shadow-card ring-1 ring-black/5">
@@ -216,13 +216,13 @@
     {{-- Penutup --}}
     <section class="mx-auto max-w-[1440px] px-5 pb-16 lg:px-[120px] lg:pb-28">
         <div class="relative flex items-center gap-14 overflow-hidden rounded-[32px] bg-gradient-to-br from-blue to-cobalt px-7 py-10 lg:rounded-5xl lg:py-14 lg:pl-[72px] lg:pr-14">
-            <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-[120px] size-[420px] rounded-full bg-teal-light/20 blur-[45px]"></div>
+            <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-[120px] size-[420px] rounded-full bg-teal-light/10 blur-[45px]"></div>
             <div class="relative flex flex-1 flex-col gap-5">
-                <p lang="ar" dir="rtl" class="w-fit font-arabic text-[40px] font-bold text-gold-light">مَنْ جَدَّ وَجَدَ</p>
+                <p lang="ar" dir="rtl" class="w-fit font-arabic text-[40px] font-bold text-gold-wash">مَنْ جَدَّ وَجَدَ</p>
                 <h2 class="text-[32px] font-extrabold leading-[1.1] tracking-[-0.03em] text-white lg:text-[44px]">Siapa bersungguh-sungguh, ia akan sampai.</h2>
-                <p class="text-[17px] leading-[1.6] text-blue-wash lg:text-lg">Luruskan niat, sempurnakan ikhtiar, lalu bertawakal. Langkah pertamanya sederhana: periksa situs resmi kampus impianmu hari ini.</p>
+                <p class="text-[17px] leading-[1.6] text-white lg:text-lg">Luruskan niat, sempurnakan ikhtiar, lalu bertawakal. Langkah pertamanya sederhana: periksa situs resmi kampus impianmu hari ini.</p>
                 <div class="flex flex-col gap-3 sm:flex-row">
-                    <a href="{{ route('links.index') }}" class="btn rounded-full bg-white py-[18px] pl-7 pr-[26px] text-ink hover:bg-blue-wash">Lihat tautan resmi <x-icon name="arrow-right" class="size-[18px]" /></a>
+                    <a href="{{ route('links.index') }}" class="btn bg-white py-[18px] pl-7 pr-[26px] text-ink hover:bg-blue-wash">Lihat tautan resmi <x-icon name="arrow-right" class="size-[18px]" /></a>
                     @guest
                         <a href="{{ route('login') }}" class="btn border-[1.5px] border-white/50 px-7 py-[18px] text-white hover:bg-white/10">Masuk</a>
                     @endguest

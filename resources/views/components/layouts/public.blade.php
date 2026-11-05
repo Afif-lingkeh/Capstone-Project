@@ -86,7 +86,7 @@
     <main id="konten" class="flex-1">{{ $slot }}</main>
 
     <footer class="bg-ink">
-        <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 pb-8 pt-12 lg:px-[120px] lg:pt-16">
+        <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-5 pb-8 pt-12 lg:px-[120px] lg:pt-16">
             <div class="flex flex-col gap-10 md:flex-row md:gap-12">
                 <div class="flex flex-col gap-4 md:w-[360px]">
                     <x-brand inverse />
