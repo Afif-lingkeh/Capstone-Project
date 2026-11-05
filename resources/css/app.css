@@ -59,6 +59,16 @@
     }
 }
 
+/* Beranda: hero disembunyikan dulu agar tidak "berkedip" sebelum animasinya
+   jalan. Hanya hero, karena cuma bagian ini yang sudah terlihat saat halaman
+   dibuka; sisanya diatur dari JS. Kelas .js-reveal dipasang hanya kalau JS siap
+   dan pengguna tidak meminta pengurangan gerak, jadi tanpa JS semuanya tampil. */
+.js-reveal [data-hero-copy] > *,
+.js-reveal [data-hero-photo],
+.js-reveal [data-hero-card] {
+    opacity: 0;
+}
+
 /* Sembunyikan elemen Alpine sebelum JavaScript siap (mencegah "kedipan"). */
 [x-cloak] {
     display: none !important;
